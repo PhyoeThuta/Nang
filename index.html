@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <style>
+    @font-face {
+      font-family: Carre;
+      src: url(../fonts/Carre.otf);
+  }
+  
+  @font-face {
+      font-family: SFPro;
+      src: url(../fonts/SFPRODISPLAYREGULAR.OTF);
+  }
+  
+  @font-face {
+      font-family: SofiaSans;
+      src: url(../fonts/SofiaSans-Regular.ttf);
+  }
+  
+  #display {
+      text-align: right;
+  }
+  #message {
+      font-family: SFPro;
+  }
+  .button {
+      width: 90px;
+      border: 3px solid #ff8b8b;
+      font-family: Carre;
+      height: 60px;
+      padding-bottom: 12px;
+      font-size: 1.5rem;
+  }
+  .button:hover{
+      width: 90px;
+      border: 3px solid rgb(255, 124, 146) !important;
+  }
+  .button:focus{
+      width: 90px;
+      border: none;
+  }
+  .btn-secondary {
+      background-color: transparent !important;
+      color: rgb(255, 148, 166) !important;
+      transition: .3s all ease-in-out;
+  }
+  .btn-secondary:hover {
+      background-color: rgb(255, 148, 166) !important;
+      color: #FFF !important;
+  }
+  .row {
+      border-radius: 20px !important;
+  }
+  h4 {
+      font-family: SofiaSans;
+      margin-bottom: 20px;
+      color: rgb(255, 148, 166) !important;
+      cursor: pointer;
+  }
+  .form {
+      width: 70%;
+      padding: 0px 20px;
+      height: 50px;
+      border: 3px solid rgb(255, 148, 166) !important;
+      border-radius: 5px;
+      font-family: Saira;
+      cursor: pointer;
+      font-family: SFPro;
+      color: rgb(255, 148, 166) !important;
+  }
+  .card-main {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form:focus {
+      box-shadow: none;
+      border: 3px solid pink;
+      outline: none;
+  }
+  .col-md-4 img {
+    border: 2px solid rgb(255, 148, 166);
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    border-radius: 0 20px 0 10px;
+  }
+
+  @media screen and (max-width: 992px) {
+    .card-main {
+      height: 100%;
+      padding: 50px 0px;
+    }
+    .col-md-4 img {
+      height: 40vh;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+    .img-2, .img-1 {
+      display: none;
+    }
+
+    .button {
+      width: 70px;
+      border: 3px solid #ff8b8b;
+      font-family: Carre;
+      height: 40px;
+      font-size: 1.2rem;
+      padding: 0;
+      padding-bottom: 10px;
+    }
+
+    h4 {
+      font-family: SofiaSans;
+      margin-bottom: 20px;
+      color: rgb(255, 148, 166) !important;
+      cursor: pointer;
+      font-size: .9rem;
+    }
+    .button:hover{
+      width: 70px;
+      border: 3px solid rgb(255, 124, 146) !important;
+    }
+      .form {
+        width: 70%;
+        padding: 0px 20px;
+        height: 40px;
+        border: 3px solid rgb(255, 148, 166) !important;
+        border-radius: 5px;
+        font-family: Saira;
+        cursor: pointer;
+        font-family: SFPro;
+        color: rgb(255, 148, 166) !important;
+    }
+  }
+  </style>
+</head>
+<body class="d-flex justify-content-center align-items-center vh-100 bg-light p-md-5 rounded-pill">
+  <div class="row col-md-12 bg-white rounded shadow p-md-5 card-main">
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-md-4 img-1">
+          <img src="asset/images/her/p8.jpg" alt="">
+        </div>
+        <div class="col-md-4 img-2">
+          <img src="asset/images/her/pten.jpg" alt="">
+        </div>
+        <div class="col-md-4">
+          <img src="asset/images/her/p5.jpg" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="calculator text-center">
+        <h4>Enter Anniversary Date</h4>
+        <input type="text" id="display" class="mb-3 form" readonly>
+        <p id="message" class="text-danger mb-3"></p>
+    
+        <div class="d-flex justify-content-center mb-2">
+          <button class="btn btn-secondary mx-1 button rounded-pill" onclick="appendNumber(1)">1</button>
+          <button class="btn btn-secondary mx-1 button rounded-pill" onclick="appendNumber(2)">2</button>
+          <button class="btn btn-secondary mx-1 button rounded-pill" onclick="appendNumber(3)">3</button>
+        </div>
+        <div class="d-flex justify-content-center mb-2">
+          <button class="btn btn-secondary mx-1 button rounded-pill" onclick="appendNumber(4)">4</button>
+          <button class="btn btn-secondary mx-1 button rounded-pill" onclick="appendNumber(5)">5</button>
+          <button class="btn btn-secondary mx-1 button rounded-pill" onclick="appendNumber(6)">6</button>
+        </div>
+        <div class="d-flex justify-content-center mb-2">
+          <button class="btn btn-secondary mx-1 button rounded-pill" onclick="appendNumber(7)">7</button>
+          <button class="btn btn-secondary mx-1 button rounded-pill" onclick="appendNumber(8)">8</button>
+          <button class="btn btn-secondary mx-1 button rounded-pill" onclick="appendNumber(9)">9</button>
+        </div>
+        <div class="d-flex justify-content-center mb-3">
+          <button class="btn btn-secondary mx-1 button rounded-pill" onclick="appendNumber(0)">0</button>
+          <button class="btn btn-secondary mx-1 button rounded-pill" onclick="checkPassword()"><i class="fa-solid fa-check"></i></button>
+          <button class="btn btn-secondary mx-1 button rounded-pill" onclick="clearDisplay()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <script>
+    const correctPassword = "191024";
+
+    function appendNumber(number) {
+      const display = document.getElementById('display');
+      display.value += number;
+    }
+
+    function clearDisplay() {
+      const display = document.getElementById('display');
+      display.value = '';
+      document.getElementById('message').textContent = '';
+    }
+
+    function checkPassword() {
+      const display = document.getElementById('display').value;
+      const message = document.getElementById('message');
+
+      if (display === correctPassword) {
+        message.classList.remove('text-danger');
+        message.classList.add('text-success');  
+        // Uncomment the line below to enable redirection
+        window.location.href = "content01.html";
+      } else {
+        message.classList.remove('text-success');
+        message.classList.add('text-danger');
+        message.textContent = 'Incorrect Password';
+      }
+    }
+  </script>
+
+</body>
+</html>
